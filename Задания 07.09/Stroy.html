@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            min-height: 100vh;
+            margin: 0;
+            background-image: url('https://i.pinimg.com/originals/00/d4/4c/00d44c27aa3bcbd2d3b1aa92e384ea16.jpg');
+            background-size: cover; 
+            background-position: center; 
+            padding-top: 20px;
+            font-family: Arial, sans-serif;
+        }
+        .button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 10px;
+            cursor: pointer;
+            border: none;
+            border-radius: 10px;
+            color: #ffffff;
+            background-color: #000000;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border: 1px solid #ddd; 
+        }
+        .button:hover {
+            background-color: #333333;
+            transform: scale(1.05);
+        }
+        .image-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .image-container {
+            width: 300px;
+            border: 1px solid #ddd;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            background-color: #ffffff;
+        }
+        .image-container img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+        .image-description {
+            padding: 10px;
+            color: #333333;
+            font-size: 14px;
+            border-top: 1px solid #ddd;
+            width: 100%;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <button class="button" onclick="location.href='index.html'">На главную</button>
+        <button class="button" onclick="showImages('ceilings')">Древесные изделия</button>
+        <button class="button" onclick="showImages('walls')">Каменные изделия</button>
+        <button class="button" onclick="showImages('floor')">Металлические изделия</button>
+    </div>
+    <div class="image-grid">
+
+        <div class="image-container ceilings">
+            <img src="CLT-панели.jpg" alt="Image 1">
+            <div class="image-description">Представляют собой панели из склеенных под прессом деревянных досок. Они экологичны и просты в монтаже. Но стоят дорого и в России применяются недавно. Эстетичный внешний вид позволяет обойтись без отделки. Пока нет данных о долговечности этого материала.</div></div>
+        <div class="image-container walls">
+            <img src="Дробленый камень.jpg" alt="Image 2">
+            <div class="image-description">Этот тип материала является массовым и менее дорогостоящим, чем предыдущий. Дробленый камень не отличается декоративностью и сложностью форм, и используется, в основном, как инертный заполнитель бетонов, или как дорожный щебень.</div></div>
+        <div class="image-container ceilings">
+            <img src="арболит.jpg" alt="Image 3">
+            <div class="image-description">Другое название — древобетон. Он прессуется в блоки из дерева и цемента. Обладает хорошей паропроницаемостью. Пластичный материал не боится сдвигов почвы (не дает трещин). Требует надежной изоляции от осадков с внешней стороны.</div>
+        </div>
+        <div class="image-container walls">
+            <img src="Облицовочный камень.jpg" alt="Image 4">
+            <div class="image-description">Такой камень используется для внешней и внутренней отделки зданий и сооружений. Объекты, при строительстве которых используется облицовочный камень, неизменно восхищают своей величественностью и выразительностью. В облицовке зданий, набережных, мостов, декоративном оформлении улиц, аллей, парков и скверов такой камень помогает добиться ощущения целостности архитектурного ансамбля и общей гармоничности окружающей среды.</div></div>
+        <div class="image-container floor">
+            <img src="Швеллер.jpg" alt="Image 5">
+            <div class="image-description">Это особый вид металлопроката – отличительной особенностью швеллера является П-образная форма поперечного сечения. Производится такой вид продукции методом горячей прокатки и применяется при возведении опорных и несущих металлоконструкций, сооружении колонн и перекрытий, при строительстве мостов и эстакад.</div></div>
+        <div class="image-container floor">
+            <img src="металлочерепица.jpg" alt="Image 6">
+            <div class="image-description">Металлочерепица является одним из лидеров по популярности и соответствию вышеперечисленным факторам. Мы производим материал из высококачественного стального листа с полимерным покрытием, благодаря чему усиливаются защитные и эксплуатационные качества. В статье мы расскажем все о металлочерепице: интересные факты, особенности и выбор материала.</div>
+        </div>
+        
+    </div>
+
+    <script>
+        function showImages(category) {
+            const allImages = document.querySelectorAll('.image-container');
+            allImages.forEach(img => img.classList.add('hidden'));
+
+            const selectedImages = document.querySelectorAll(`.${category}`);
+            selectedImages.forEach(img => img.classList.remove('hidden'));
+        }
+        showImages('ceilings');
+    </script>
+</body>
+</html>

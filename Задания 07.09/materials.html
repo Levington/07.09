@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            min-height: 100vh;
+            margin: 0;
+            background-image: url('https://i.pinimg.com/originals/00/d4/4c/00d44c27aa3bcbd2d3b1aa92e384ea16.jpg');
+            background-size: cover; 
+            background-position: center; 
+            padding-top: 20px;
+            font-family: Arial, sans-serif;
+        }
+        .button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 10px;
+            cursor: pointer;
+            border: none;
+            border-radius: 10px;
+            color: #ffffff;
+            background-color: #000000;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border: 1px solid #ddd; 
+        }
+        .button:hover {
+            background-color: #333333;
+            transform: scale(1.05);
+        }
+        .image-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .image-container {
+            width: 300px;
+            border: 1px solid #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            background-color: #ffffff;
+        }
+        .image-container img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+        .image-caption {
+            padding: 10px;
+            color: #333333;
+            font-size: 14px;
+            border-top: 1px solid #ddd;
+            width: 100%;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <button class="button" onclick="location.href='index.html'">На главную</button>
+        <button class="button" onclick="showImages('ceilings')">Материалы для потолков</button>
+        <button class="button" onclick="showImages('walls')">Материалы для стен</button>
+        <button class="button" onclick="showImages('floor')">Материалы для пола</button>
+        <button class="button" onclick="showImages('others')">Прочие материалы</button>
+    </div>
+    <div class="image-grid">
+
+        <div class="image-container ceilings">
+            <img src="372d7fc82687cd63.jpg" alt="Image 1">
+            <div class="image-caption">Многоуровневыми потолками называют конструкции, состоящие из нескольких ярусов. Количество уровней и форма конструкций ограничивается высотой и размерами потолка.</div>
+        </div>
+        <div class="image-container ceilings">
+            <img src="ec51d19f90caac90.jpg" alt="Image 3">
+            <div class="image-caption">Популярностью пользуются тканевые натяжные потолки, которые изготавливаются из цельного тканевого синтетического полотна, пропитанного специальным составом. Благодаря пропитке полотно становится прочнее, приобретает большую механическую устойчивость к разрывам, но имеет микропоры, пропускающие воздух.</div>
+        </div>
+
+        <div class="image-container walls">
+            <img src="Тканевые обои.jpg" alt="Image 2">
+            <div class="image-caption">Основа состава – флизелин или бумага. На лицевую сторону полотна принято наносить текстиль. Варианты: окрашенные нити, цельная ткань. Благодаря множеству дизайнерских вариантов исполнения текстильные обои могут быть использованы для качественного преображения любого помещения. Вместе с тем оно станет эстетически привлекательным</div>
+        </div>
+        <div class="image-container walls">
+            <img src="флизелиновых.jpg" alt="Image 4">
+            <div class="image-caption">Флизелиновые обои, как правило, сделаны из целлюлозы (в среднем на 70%) и синтетических добавок (полиэстер). Они обладают высокой прочностью, устойчивостью к воздействию влаги, воздухопроницаемостью</div>
+        </div>
+
+        <div class="image-container floor">
+            <img src="паркет.озп.jpg" alt="Image 5">
+            <div class="image-caption">аркет – это долгосрочная и зачастую недешевая инвестиция, поэтому хозяевам важно, как выглядит паркет. Внешнее впечатление от напольного покрытия зависит не только от выбранной древесины, но и от вида паркета. Различают несколько основных видов: штучный, щитовой, наборный, художественный, пронто-паркет.</div>
+        </div>
+        <div class="image-container floor">
+            <img src="Лионулем.jpg" alt="Image 6">
+            <div class="image-caption">Линолеум Tarkett – это один из видов синтетических материалов, используемых для внутренних отделочных работ в качестве напольного покрытия. Марка всемирно известного бренда обладает высокими эксплуатационными свойствами, имеет широкий ассортимент расцветок и фактур, кроме того, выпускается в различных размерных и ценовых диапазонах.</div>
+        </div>
+
+        <div class="image-container others">
+            <img src="инструменты.jpg" alt="Image 7">
+            <div class="image-caption">Молотк, рулетка, уровень, пасатижы, кисточка</div>
+        </div>
+        <div class="image-container others">
+            <img src="мелочь.jpg" alt="Image 8">
+            <div class="image-caption">Шурупы, гвозди, дюпеля</div>
+        </div>
+    </div>
+
+    <script>
+        function showImages(category) {
+            const allImages = document.querySelectorAll('.image-container');
+            allImages.forEach(img => img.classList.add('hidden'));
+
+            const selectedImages = document.querySelectorAll(`.${category}`);
+            selectedImages.forEach(img => img.classList.remove('hidden'));
+        }
+        showImages('ceilings');
+    </script>
+</body>
+</html>
